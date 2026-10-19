@@ -161,7 +161,7 @@ NLJ_NAKED void PendSV_Handler(void)
         "  STM     r0!,{r1-r3}          \n" /* LR=ISR_NLJ_Return, PC=ISR_NLJ_Activate, xPSR=0x01000000 */
 
         /* r0 = ~6 = 0xFFFFFFF9，即 EXC_RETURN：
-         * 返回 Handler 模式、使用 MSP、无 FPU 扩展帧——
+         * 返回 Thread 模式、使用 MSP、无 FPU 扩展帧——
          * 恰好匹配刚合成的 8 字基本帧 */
         "  MOVS    r0,#6                \n"
         "  MVNS    r0,r0                \n"
